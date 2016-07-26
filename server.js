@@ -5,7 +5,6 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 
 import config               from './webpack.config'
 
-
 var PORT = process.env.PORT || 7000
 
 var app = express()
@@ -31,7 +30,6 @@ app.use((req, res, next) => {
 		next()
 	}
 })
-
 
 app.listen(PORT, () => {
 	console.log('===================================================================================')
