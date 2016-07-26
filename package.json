@@ -23,5 +23,10 @@
     "react-router": "^2.6.0",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.1"
   }
 }
