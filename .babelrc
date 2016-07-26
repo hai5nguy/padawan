@@ -1,0 +1,13 @@
+{
+	"plugins": [
+		[
+			"babel-root-import",
+			{
+				"rootPathSuffix": "src"
+			}
+		],
+		"transform-runtime",
+		"transform-decorators-legacy"
+	],
+	"presets": ["es2015", "stage-0", "react"]
+}
