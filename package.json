@@ -1,0 +1,19 @@
+{
+  "name": "padawan",
+  "version": "1.0.0",
+  "description": "Padawan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hai5nguy/padawan.git"
+  },
+  "author": "Hai Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hai5nguy/padawan/issues"
+  },
+  "homepage": "https://github.com/hai5nguy/padawan#readme"
+}
