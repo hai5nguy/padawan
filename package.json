@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/hai5nguy/padawan/issues"
   },
-  "homepage": "https://github.com/hai5nguy/padawan#readme"
+  "homepage": "https://github.com/hai5nguy/padawan#readme",
+  "dependencies": {
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.6.0",
+    "react-router-redux": "^4.0.5",
+    "redux": "^3.5.2"
+  }
 }
