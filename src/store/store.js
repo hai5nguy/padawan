@@ -4,7 +4,6 @@ import { browserHistory } 											from 'react-router'
 
 import { students } from './students-reducer'
 
-console.log(students, 'student')
 var reducers = combineReducers({
 	routing: routerReducer,
 	students
