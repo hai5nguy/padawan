@@ -6,6 +6,10 @@ import { Provider }	from 'react-redux'
 import { store, history } 	from '~/store/store'
 import routes 				from './routes'
 
+import { Student }			from '~/actions/actions'
+
+Student.fetchAll()
+
 render(
 	<Provider store={store}>
 		<Router history={history} children={routes} />

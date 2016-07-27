@@ -1,7 +1,7 @@
 import React from 'react'
 import Radium from 'radium'
 
-import { AddStudent } from '~/components/components'
+import { AddStudent, StudentList } from '~/components/components'
 
 @Radium
 export default class Main extends React.Component {
@@ -10,6 +10,7 @@ export default class Main extends React.Component {
 			<div style={styles.main}>
 				main
 				<AddStudent />
+				<StudentList />
 			</div>
 		)
 	}

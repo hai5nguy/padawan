@@ -27,10 +27,16 @@ export default class AddStudent extends React.Component {
 		}
 	}
 	submitClick() {
-		Student.create({ name: this.state.name})
+		var { name } = this.state
+		if (!name.trim()) return
+
+		Student.create({ name })
 		this.setState({
 			name: ''
 		})
+	}
+	deleteAllClick() {
+		Student.deleteAll()
 	}
 
 	render() {
@@ -39,6 +45,7 @@ export default class AddStudent extends React.Component {
 				add student
 				<input type="textbox" value={this.state.name} onChange={this.nameChanged} onKeyDown={this.nameKeyDown} />
 				<button onClick={this.submitClick}>Submit</button>
+				<button onClick={this.deleteAllClick}>Delete All Students</button>
 			</div>
 		)
 	}
