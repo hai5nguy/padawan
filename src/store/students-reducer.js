@@ -11,7 +11,7 @@ export default (state = [], action) => {
 		case 'CREATE_STUDENT_SUCCESS':
 			var { student } = action
 			return state.map((s) => {
-				if (s.temp_id && s.temp_id === student.temp_id) {
+				if (s.temp_id === student.temp_id) {
 					var { _id, name } = student
 					return { _id, name }
 				}
@@ -20,6 +20,22 @@ export default (state = [], action) => {
 
 		case 'CREATE_STUDENT_FAIL':
 			//todo
+
+			return state
+
+
+		case 'UPDATE_STUDENT_START':
+			return state
+
+		case 'UPDATE_STUDENT_SUCCESS':
+			return state.map(s => {
+				if (s._id === action._id) {
+					return action.student
+				}
+				return s
+			})
+
+		case 'UPDATE_STUDENT_FAIL':
 
 			return state
 

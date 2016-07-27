@@ -20,10 +20,14 @@ export default class StudentList extends React.Component {
 	}
 
 	render() {
+		var rows = this.props.students.map(s => {
+			var id = s._id || s.temp_id
+			return <StudentRow key={id} student={s} />
+		})
 		return (
 			<div style={styles.container}>
 				students:
-				{this.props.students.map((s, i) => <StudentRow key={i} student={s} />)}
+				{rows}
 			</div>
 		)
 	}

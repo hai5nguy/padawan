@@ -33,6 +33,37 @@ const create = async (student) => {
 	dispatch(action)
 }
 
+const update = async (student) => {
+	dispatch({
+		type: 'UPDATE_STUDENT_START',
+		student
+	})
+
+	var graph = `
+		mutation {
+			updateStudent ( _id: "${student._id}" name: "${student.name}" ) {
+				_id,
+				name
+			}
+		}
+	`
+	try {
+		var data = await PadawanApi.sendGraph(graph)
+		var action = {
+			type: 'UPDATE_STUDENT_SUCCESS',
+			student: data.updateStudent
+		}
+	} catch (err) {
+		var action = {
+			type: 'UPDATE_STUDENT_FAIL',
+			student,
+			error: err
+		}
+	}
+
+	dispatch(action)
+}
+
 const _delete = async (_id) => {
 	dispatch({
 		type: 'DELETE_STUDENT_START',
@@ -121,4 +152,4 @@ const deleteAll = async () => {
 
 }
 
-export default { create, delete: _delete, fetchAll, deleteAll }
+export default { create, update, delete: _delete, fetchAll, deleteAll }
