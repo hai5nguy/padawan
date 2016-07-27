@@ -8,7 +8,6 @@ const create = async (student) => {
 		student
 	})
 
-	console.log('student', student)
 	var graph = `
 		mutation {
 			createStudent ( name: "${student.name}" ) {
@@ -32,7 +31,6 @@ const create = async (student) => {
 	}
 
 	dispatch(action)
-
 }
 
 export default { create }
