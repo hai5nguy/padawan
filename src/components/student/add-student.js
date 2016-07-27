@@ -5,17 +5,39 @@ import { Student } from '~/actions/actions'
 
 @Radium
 export default class AddStudent extends React.Component {
+	constructor(props) {
+		super(props)
 
-	submitClick(e) {
-		// console.log('student', Student)
+		this.nameChanged = this.nameChanged.bind(this)
+		this.nameKeyDown = this.nameKeyDown.bind(this)
+		this.submitClick = this.submitClick.bind(this)
 
-		Student.create({ name: 'test test'})
+		this.state = {
+			name: ''
+		}
 	}
+	nameChanged(e) {
+		this.setState({
+			name: e.currentTarget.value
+		})
+	}
+	nameKeyDown(e) {
+		if (e.keyCode === 13) {
+			this.submitClick()
+		}
+	}
+	submitClick() {
+		Student.create({ name: this.state.name})
+		this.setState({
+			name: ''
+		})
+	}
+
 	render() {
 		return (
 			<div style={styles.container}>
 				add student
-				<input type="textbox"/>
+				<input type="textbox" value={this.state.name} onChange={this.nameChanged} onKeyDown={this.nameKeyDown} />
 				<button onClick={this.submitClick}>Submit</button>
 			</div>
 		)

@@ -4,7 +4,7 @@ export default (state = [], action) => {
 	switch (action.type) {
 		case 'CREATE_STUDENT_START':
 			var { student } = action
-			student.temp_id = uuid.v1()
+			student.temp_id = uuid.v4()
 			student.pendingCreation = true
 			return [ ...state, student ]
 
