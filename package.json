@@ -25,7 +25,8 @@
     "react-router": "^2.6.0",
     "react-router-redux": "^4.0.5",
     "redux": "^3.5.2",
-    "superagent": "^2.1.0"
+    "superagent": "^2.1.0",
+    "uuid": "^2.0.2"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",

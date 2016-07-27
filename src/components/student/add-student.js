@@ -9,7 +9,7 @@ export default class AddStudent extends React.Component {
 	submitClick(e) {
 		// console.log('student', Student)
 
-		Student.create()
+		Student.create({ name: 'test test'})
 	}
 	render() {
 		return (

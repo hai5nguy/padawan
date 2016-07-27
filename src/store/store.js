@@ -2,7 +2,7 @@ import { applyMiddleware, combineReducers, compose, createStore } 	from 'redux'
 import { routerReducer, routerMiddleware, syncHistoryWithStore } 	from 'react-router-redux'
 import { browserHistory } 											from 'react-router'
 
-import { students } from './students-reducer'
+import students from './students-reducer'
 
 var reducers = combineReducers({
 	routing: routerReducer,

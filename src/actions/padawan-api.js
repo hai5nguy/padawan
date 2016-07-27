@@ -9,7 +9,7 @@ const sendGraph = async (graph) => {
 			.send(graph)
 			.end((err, res) => {
 				if (err) {
-					throw 'Padawan Api error: unable to send graph' + graph
+					reject(err)
 				} else {
 					resolve(res.body.data)
 				}
