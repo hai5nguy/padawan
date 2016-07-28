@@ -31,7 +31,7 @@ export default class StudentRow extends React.Component {
 			<div style={styles.container}>
 				<p style={styles.id}>{displayId}</p>
 				<p style={styles.name}><EditableField value={name} onDone={this.nameEdited} /></p>   
-				<p style={styles.actions}><button onClick={this.deleteClick}>Delete</button></p>
+				<p style={styles.actions}><button style={styles.actions.button} onClick={this.deleteClick}>Delete</button></p>
 			</div>
 		)
 	}
@@ -40,18 +40,24 @@ export default class StudentRow extends React.Component {
 const styles = {
 	container: {
 		marginTop: '4px',
-		// background: '#DADEF3'
+		lineHeight: '34px'
 	},
 	id: {
 		display: 'inline-block',
-		width: '50%'
+		width: '40%',
 	},
 	name: {
 		display: 'inline-block',
-		width: '30%'
+		width: '40%'
 	},
 	actions: {
 		display: 'inline-block',
-		width: '20%'
+		width: '20%',
+		button: {
+			height: '30px',
+			padding: '0 6px 0 6px',
+			margin: '0 0 0 4px'
+		}
 	}
+
 }

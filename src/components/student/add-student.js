@@ -106,12 +106,8 @@ const styles = {
 	},
 	submit: {
 		height: '34px',
-		// background: '#eeeeee',
 		fontSize: '14px',
 		padding: '0px 6px',
 		marginLeft: '6px',
-
-		// borderRadius: '4px',
-		// border: 'none'
 	}
 }

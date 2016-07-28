@@ -49,44 +49,35 @@ export default class StudentList extends React.Component {
 
 const styles = {
 	container: {
-		// background: '#E0E0E0',
-		padding: '0px 15px',
+		padding: '10px 15px 0 15px',
 		position: 'relative'
 	},
 	header: {
 		padding: '10px 0 5px 0',
 		textAlign: 'center',
-		// borderBottom: '1px solid #2e6680'
 	},
 	deleteAll: {
-		// float: 'right'
 		position: 'absolute',
 		right: '15px',
-		top: '0px',
+		top: '15px',
 		height: '34px',
-		// background: '#eeeeee',
 		fontSize: '14px',
 		padding: '0px 6px',
-		// marginLeft: '6px',
 	},
 	listHeader: {
-		// clear: 'both',
 		background: '#9393a0',
 		padding: '5px 0',
 
 		id: {
-			// background: 'green',
 			display: 'inline-block',
 			paddingLeft: '6px',
-			width: '50%'
+			width: '40%'
 		},
 		name: {
-			// background: 'yellow',
 			display: 'inline-block',
-			width: '30%'
+			width: '40%'
 		},
 		actions: {
-			// background: 'red',
 			display: 'inline-block',
 			width: '20%'
 		}
