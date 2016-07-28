@@ -5,8 +5,11 @@ import { Provider }	from 'react-redux'
 
 import { store, history } 	from '~/store/store'
 import routes 				from './routes'
+import preloadImages		from './static/preloadimages'
 
 import { Student }			from '~/actions/actions'
+
+preloadImages()
 
 Student.fetchAll()
 

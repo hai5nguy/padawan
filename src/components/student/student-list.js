@@ -8,7 +8,8 @@ import { StudentRow } from '~/components/components'
 
 const mapStateToProps = (state, ownProps) => {
 	return {
-		students: state.students
+		students: state.students,
+		fetchingStudents: state.ui.fetchingStudents
 	}
 }
 
@@ -24,10 +25,20 @@ export default class StudentList extends React.Component {
 	}
 
 	render() {
-		var rows = this.props.students.map(s => {
-			var id = s._id || s.temp_id
-			return <StudentRow key={id} student={s} />
-		})
+
+		if (this.props.fetchingStudents) {
+			var rows = (
+				<div style={styles.loading}>
+					<span style={styles.loading.span}>Loading...</span>
+				</div>
+			)
+		} else {
+			var rows = this.props.students.map(s => {
+				var id = s._id || s.temp_id
+				return <StudentRow key={id} student={s} />
+			})	
+		}
+		
 		return (
 			<div style={styles.container}>
 				<button
@@ -82,5 +93,17 @@ const styles = {
 			width: '20%'
 		}
 	},
+	loading: {
+		textAlign: 'center',
+		width: '100%',
+		span: {
+			display: 'inline-block',
+			margin: '5px 0 0 0',
+			background: 'yellow',
+			borderRadius: '4px',
+			padding: '3px 20px',
+			opacity: '0.7'
+		}
+	}
 
 }

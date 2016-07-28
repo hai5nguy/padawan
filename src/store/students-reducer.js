@@ -5,7 +5,7 @@ export default (state = [], action) => {
 		case 'CREATE_STUDENT_START':
 			var { student } = action
 			student.temp_id = uuid.v4()
-			student.pendingCreation = true
+			student.showSpinner = true
 			return [ ...state, student ]
 
 		case 'CREATE_STUDENT_SUCCESS':
@@ -25,25 +25,30 @@ export default (state = [], action) => {
 
 
 		case 'UPDATE_STUDENT_START':
-			return state
+			return state.map(s => {
+				if (s._id === action.student._id) {
+					s.showSpinner = true
+				}
+				return s
+			})
 
 		case 'UPDATE_STUDENT_SUCCESS':
 			return state.map(s => {
-				if (s._id === action._id) {
+				if (s._id === action.student._id) {
 					return action.student
 				}
 				return s
 			})
 
 		case 'UPDATE_STUDENT_FAIL':
-
+			//todo
 			return state
 
 		case 'DELETE_STUDENT_START':
 			var { _id } = action
 			return state.map(s => {
 				if (s._id === _id) {
-					return Object.assign(s, { pendingDeletion: true })
+					s.showSpinner = true
 				}
 				return s
 			})
@@ -52,7 +57,7 @@ export default (state = [], action) => {
 			return state.filter(s => s._id !== action._id)
 
 		case 'DELETE_STUDENT_FAIL':
-			
+			//todo
 			return state
 
 
