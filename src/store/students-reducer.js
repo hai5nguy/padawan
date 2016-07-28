@@ -12,8 +12,9 @@ export default (state = [], action) => {
 			var { student } = action
 			return state.map((s) => {
 				if (s.temp_id === student.temp_id) {
-					var { _id, name } = student
-					return { _id, name }
+					delete student.temp_id
+					delete student.showSpinner
+					return student
 				}
 				return s
 			})

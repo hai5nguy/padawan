@@ -18,7 +18,7 @@ export default class AddStudent extends React.Component {
 	}
 	nameChanged(e) {
 		this.setState({
-			name: e.currentTarget.value
+			name: this.refs.name.value
 		})
 	}
 	nameKeyDown(e) {
@@ -43,7 +43,13 @@ export default class AddStudent extends React.Component {
 					<h2 style={styles.label}>Student Creation</h2>
 					<div style={styles.name}>
 						<span style={styles.nameLabel}>Name</span>
-						<input style={styles.nameBox} type="textbox" value={this.state.name} onChange={this.nameChanged} onKeyDown={this.nameKeyDown} />
+						<input ref="name"
+							style={styles.nameBox}
+							type="textbox"
+							value={this.state.name}
+							onChange={this.nameChanged}
+							onKeyDown={this.nameKeyDown}
+						/>
 					</div>
 					<button style={styles.submit} onClick={this.submitClick}>Submit</button>
 				</div>
