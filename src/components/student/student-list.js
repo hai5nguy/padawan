@@ -9,7 +9,7 @@ import { StudentRow } from '~/components/components'
 const mapStateToProps = (state, ownProps) => {
 	return {
 		students: state.students,
-		fetchingStudents: state.ui.fetchingStudents
+		showLoading: state.ui.showLoading
 	}
 }
 
@@ -25,19 +25,18 @@ export default class StudentList extends React.Component {
 	}
 
 	render() {
-
-		if (this.props.fetchingStudents) {
-			var rows = (
+		if (this.props.showLoading) {
+			var spinner = (
 				<div style={styles.loading}>
 					<span style={styles.loading.span}>Loading...</span>
 				</div>
 			)
-		} else {
-			var rows = this.props.students.map(s => {
-				var id = s._id || s.temp_id
-				return <StudentRow key={id} student={s} />
-			})	
 		}
+
+		var rows = this.props.students.map(s => {
+			var id = s._id || s.temp_id
+			return <StudentRow key={id} student={s} />
+		})	
 		
 		return (
 			<div style={styles.container}>
@@ -52,6 +51,7 @@ export default class StudentList extends React.Component {
 					<p style={styles.listHeader.name}>Name</p>
 					<p style={styles.listHeader.actions}>Actions</p>
 				</div>
+				{spinner}
 				{rows}
 			</div>
 		)
@@ -96,6 +96,7 @@ const styles = {
 	loading: {
 		textAlign: 'center',
 		width: '100%',
+		position: 'absolute',
 		span: {
 			display: 'inline-block',
 			margin: '5px 0 0 0',

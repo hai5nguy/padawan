@@ -131,6 +131,8 @@ const fetchAll = async () => {
 }
 
 const deleteAll = async () => {
+	dispatch({ type: 'DELETE_ALL_STUDENTS_START' })
+
 	var graph = `
 		mutation {
 			deleteAllStudents {
@@ -141,13 +143,16 @@ const deleteAll = async () => {
 	try {
 		var data = await PadawanApi.sendGraph(graph)
 	} catch (err) {
+		dispatch({ type: 'DELETE_ALL_STUDENTS_FAIL' })
 		throw 'Student.deleteAll error: ' + err
 	}
 
 	if (data.deleteAllStudents.status === 'DELETE_SUCCESS') {
-		dispatch({ type: 'DELETE_ALL_STUDENTS' })
+		dispatch({ type: 'DELETE_ALL_STUDENTS_SUCCESS' })
 	} else {
+		dispatch({ type: 'DELETE_ALL_STUDENTS_FAIL' })
 		throw 'Student.deleteAll error, data: ' + JSON.stringify(data)
+
 	}
 
 }

@@ -64,7 +64,7 @@ export default (state = [], action) => {
 		case 'FETCHING_STUDENTS_SUCCESS':
 			return action.students
 
-		case 'DELETE_ALL_STUDENTS':
+		case 'DELETE_ALL_STUDENTS_SUCCESS':
 			return []
 
 		default:
