@@ -51,7 +51,8 @@ export default class EditableField extends React.Component {
 	render() {
 		if (this.state.editing) {
 			return (
-				<input type="textbox" 
+				<input type="textbox"
+					style={styles.textbox}
 					ref="textbox"
 					value={this.state.value}
 					onBlur={this.fieldBlur}
@@ -72,9 +73,24 @@ export default class EditableField extends React.Component {
 
 const styles = {
 	field: {
+		height: '34px',
+
 		display: 'inline-block',
-		width: '100px',
+		// width: '100px',
 		marginLeft: '5px',
-		marginRight: '5px'
+		verticalAlign: 'center',
+		marginRight: '5px',
+		':hover': {
+			border: '1px solid blue',
+			borderRadius: '4px'
+		}
+	},
+	textbox: {
+		verticalAlign: 'center',
+		height: '34px',
+		fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+		fontSize: '14px',
+		paddingLeft: '3px',
+		color: '#555',
 	}
 }

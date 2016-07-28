@@ -35,17 +35,18 @@ export default class AddStudent extends React.Component {
 			name: ''
 		})
 	}
-	deleteAllClick() {
-		Student.deleteAll()
-	}
 
 	render() {
 		return (
 			<div style={styles.container}>
-				add student
-				<input type="textbox" value={this.state.name} onChange={this.nameChanged} onKeyDown={this.nameKeyDown} />
-				<button onClick={this.submitClick}>Submit</button>
-				<button onClick={this.deleteAllClick}>Delete All Students</button>
+				<div style={styles.inner}>
+					<h2 style={styles.label}>Student Creation</h2>
+					<div style={styles.name}>
+						<span style={styles.nameLabel}>Name</span>
+						<input style={styles.nameBox} type="textbox" value={this.state.name} onChange={this.nameChanged} onKeyDown={this.nameKeyDown} />
+					</div>
+					<button style={styles.submit} onClick={this.submitClick}>Submit</button>
+				</div>
 			</div>
 		)
 	}
@@ -53,6 +54,64 @@ export default class AddStudent extends React.Component {
 
 const styles = {
 	container: {
-		background: '#9487F3'
+		// background: '#E0E0E0',
+		padding: '15px'
+	},
+	inner: {
+		textAlign: 'center',
+		padding: '15px 15px 25px 15px',
+		border: '1px solid #2e6680',
+		borderRadius: '3px'
+
+	},
+	label: {
+		paddingBottom: '10px',
+		borderRadius: '3px',
+	},
+
+	name: {
+		display: 'inline-block',
+		borderRadius: '4px',
+		width: 'auto',
+		margin: 'auto',
+		verticalAlign: 'bottom'
+	},
+
+
+	nameLabel: {
+		borderTop: '1px solid #ccc',
+		borderLeft: '1px solid #ccc',
+		borderBottom: '1px solid #ccc',
+		borderRadius: '4px 0px 0px 4px',
+		height: '34px',
+		display: 'inline-block',
+		background: '#eeeeee',
+		fontSize: '14px',
+		padding: '0px 6px',
+		lineHeight: '34px'
+	},
+
+	nameBox: {
+		borderTop: '1px solid #ccc',
+		borderRight: '1px solid #ccc',
+		borderBottom: '1px solid #ccc',
+		borderLeft: 'none',
+		borderRadius: '0px 4px 4px 0px',
+		height: '34px',
+		verticalAlign: 'bottom',
+		fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif',
+		fontSize: '14px',
+		paddingLeft: '3px',
+		color: '#555',
+	},
+	submit: {
+		height: '34px',
+		// background: '#eeeeee',
+		fontSize: '14px',
+		padding: '0px 6px',
+		marginLeft: '6px',
+
+		// borderRadius: '4px',
+		// border: 'none'
 	}
 }

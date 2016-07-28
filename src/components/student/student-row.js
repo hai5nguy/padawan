@@ -29,9 +29,9 @@ export default class StudentRow extends React.Component {
 		var displayId = _id || temp_id
 		return (
 			<div style={styles.container}>
-				student: {displayId}
-				<EditableField value={name} onDone={this.nameEdited} />   
-				<button onClick={this.deleteClick}>Delete</button>
+				<p style={styles.id}>{displayId}</p>
+				<p style={styles.name}><EditableField value={name} onDone={this.nameEdited} /></p>   
+				<p style={styles.actions}><button onClick={this.deleteClick}>Delete</button></p>
 			</div>
 		)
 	}
@@ -39,6 +39,19 @@ export default class StudentRow extends React.Component {
 
 const styles = {
 	container: {
-		background: '#DADEF3'
+		marginTop: '4px',
+		// background: '#DADEF3'
+	},
+	id: {
+		display: 'inline-block',
+		width: '50%'
+	},
+	name: {
+		display: 'inline-block',
+		width: '30%'
+	},
+	actions: {
+		display: 'inline-block',
+		width: '20%'
 	}
 }

@@ -10,6 +10,9 @@ export default class Root extends React.Component {
 						boxSizing: 'border-box',
 						margin: '0px',
 						padding: '0px'
+					},
+					body: {
+						background: '#f7f7f7'
 					}
 				}} />
 				{this.props.children}
